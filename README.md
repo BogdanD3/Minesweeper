@@ -3,6 +3,32 @@ Collaborative project between University of Montenegro (PMF) and University of S
 
 ---
 
+## Getting Started
+
+1. Clone the repository
+   git clone https://github.com/your-repo/minesweeper-project.git
+   cd minesweeper-project
+
+2. Switch to development branch
+   git checkout development
+   git pull origin development
+
+3. Switch to your assigned branch
+   git checkout feature/your-branch-name
+
+4. Write your code, then commit and push
+   git add .
+   git commit -m "Short description of what you did"
+   git push origin feature/your-branch-name
+
+5. Open a Pull Request on GitHub
+   - Go to the repository on GitHub
+   - Click "Compare & pull request"
+   - Set base branch to: development
+   - Write a short description and submit
+
+---
+
 ## Branch Strategy
 - `main` — stable, working code only. No direct pushes.
 - `development` — integration branch. All PRs go here first.
