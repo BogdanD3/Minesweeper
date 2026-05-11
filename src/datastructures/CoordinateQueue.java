@@ -63,27 +63,6 @@ public class CoordinateQueue {
 		else {
 			head = head.next;
 		}
-	}
-	
-	
-	
-	
-	
-		
-			
-		
-			
-		
-		
-		
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-
+	}	
 }
+
