@@ -1,6 +1,9 @@
-package minesweeper.model;
+package minesweeper.datastructures;
 
 import java.util.Random;
+import minesweeper.model.Cell;
+import minesweeper.model.CellState;
+import minesweeper.model.GameOutcome;
 
 public class Board {
 	

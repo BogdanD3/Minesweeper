@@ -1,6 +1,6 @@
 package minesweeper.simulation;
 
-import minesweeper.model.Board;
+import minesweeper.datastructures.Board;
 import minesweeper.model.GameOutcome;
 
 import java.io.BufferedWriter;

@@ -1,4 +1,4 @@
-package minesweeper.model;
+package minesweeper.simulation;
 
 public class MyLinkedList {
 
@@ -31,5 +31,5 @@ public class MyLinkedList {
     public NodeMove getHead() {
         return head;
     }
-    
+
 }

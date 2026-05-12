@@ -1,4 +1,4 @@
-package minesweeper.model;
+package minesweeper.simulation;
 
 public class Move {
 
