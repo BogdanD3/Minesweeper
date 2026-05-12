@@ -1,3 +1,5 @@
+package minesweeper.model;
+
 public class MyLinkedList {
 
     private NodeMove head;
@@ -8,29 +10,26 @@ public class MyLinkedList {
 
     public void insert(Move move) {
         NodeMove newNode = new NodeMove(move);
-        if (head == null) {
-            head = newNode;
-            return;
-        }
+        if (head == null) { head = newNode; return; }
         NodeMove current = head;
-        while (current.next != null) {
-            current = current.next;
+        while (current.getNext() != null) {
+            current = current.getNext();
         }
-        current.next = newNode;
+        current.setNext(newNode);
+    }
+
+    public int size() {
+        int count = 0;
+        NodeMove current = head;
+        while (current != null) {
+            count++;
+            current = current.getNext();
+        }
+        return count;
     }
 
     public NodeMove getHead() {
         return head;
     }
-
-    public int size() {
-    int count = 0;
-    NodeMove current = head;
-    while (current != null) {
-        count++;
-        current = current.next;
-    }
-    return count;
-}
-
+    
 }

@@ -10,4 +10,6 @@ public class NodeMove {
         this.next = null;
     }
 
+    public NodeMove getNext() { return next; }
+    public void setNext(NodeMove next) { this.next = next; }
 }

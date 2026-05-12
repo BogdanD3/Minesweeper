@@ -2,6 +2,7 @@ package minesweeper.simulation;
 
 import minesweeper.model.Board;
 import minesweeper.model.CellState;
+import minesweeper.model.Move;
 import minesweeper.model.GameOutcome;
 import java.util.Random;
 
