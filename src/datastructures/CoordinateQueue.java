@@ -1,4 +1,4 @@
-package datastructures;
+package minesweeper.datastructures;
 
 public class CoordinateQueue {
 	
