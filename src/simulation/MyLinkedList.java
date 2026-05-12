@@ -22,4 +22,15 @@ public class MyLinkedList {
     public NodeMove getHead() {
         return head;
     }
+
+    public int size() {
+    int count = 0;
+    NodeMove current = head;
+    while (current != null) {
+        count++;
+        current = current.next;
+    }
+    return count;
+}
+
 }
