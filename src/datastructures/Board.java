@@ -1,4 +1,4 @@
-package datastructures;
+package minesweeper.model;
 
 import java.util.Random;
 

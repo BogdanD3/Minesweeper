@@ -1,0 +1,68 @@
+package minesweeper.simulation;
+
+import minesweeper.model.Board;
+import minesweeper.model.Cell;
+import minesweeper.model.CellState;
+import minesweeper.model.GameOutcome;
+import java.util.Random;
+
+public class Player {
+    private final Board board;
+    private final MyLinkedList moveHistory;
+    private final Random rng;
+
+    public Player(Board board) {
+        this.board = board;
+        this.moveHistory = new MyLinkedList();
+        this.rng = new Random();
+    }
+
+    public GameOutcome playTurn() {
+        int size = board.getSize();
+        int hiddenCount = 0;
+        for (int r = 0; r < size; r++) {
+            for (int c = 0; c < size; c++) {
+                if (board.getCell(r, c).getState() == CellState.HIDDEN) {
+                    hiddenCount++;
+                }
+            }
+        }
+
+        if (hiddenCount == 0) {
+            return board.getGameState();
+        }
+
+        int target = rng.nextInt(hiddenCount);
+        int count = 0;
+        int chosenRow = -1, chosenCol = -1;
+
+        outer:
+        for (int r = 0; r < size; r++) {
+            for (int c = 0; c < size; c++) {
+                if (board.getCell(r, c).getState() == CellState.HIDDEN) {
+                    if (count == target) {
+                        chosenRow = r;
+                        chosenCol = c;
+                        break outer;
+                    }
+                    count++;
+                }
+            }
+        }
+
+        boolean isMine = board.getCell(chosenRow, chosenCol).isMine();
+        board.revealCell(chosenRow, chosenCol);
+
+        moveHistory.insert(new Move(chosenRow, chosenCol, !isMine));
+
+        return board.getGameState();
+    }
+
+    public MyLinkedList getMoveHistory() {
+        return moveHistory;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+}
