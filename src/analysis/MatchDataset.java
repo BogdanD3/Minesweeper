@@ -1,3 +1,5 @@
+package minesweeper.analysis;
+
 import java.util.*;
 
 public class MatchDataset {

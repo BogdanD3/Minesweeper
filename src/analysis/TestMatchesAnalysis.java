@@ -1,10 +1,12 @@
+package minesweeper.analysis;
+
 import java.io.IOException;
 
 public class TestMatchesAnalysis {
 
     public static void main(String[] args) throws IOException {
 
-        MatchDataset dataset = Factory.parseFile("matches.csv");
+        MatchDataset dataset = MatchFactory.parseFile("matches.csv");
 
         System.out.println("=== Telemetry Report ===");
         System.out.println();
