@@ -3,6 +3,18 @@ Collaborative project between University of Montenegro (PMF) and University of S
 
 ---
 
+## How to Run
+
+### 1. Compile
+
+### 2. Run the Simulator
+Generates `matches.csv` with 1000 automated matches.
+
+### 3. Run the Analysis
+Reads `matches.csv` and prints the telemetry report.
+
+---
+
 ## Getting Started
 
 1. Clone the repository
