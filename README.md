@@ -18,7 +18,7 @@ Reads `matches.csv` and prints the telemetry report.
 ## Getting Started
 
 1. Clone the repository
-   git clone https://github.com/your-repo/minesweeper-project.git
+   git clone https://github.com/BogdanD3/Minesweeper.git
    cd minesweeper-project
 
 2. Switch to development branch
