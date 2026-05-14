@@ -25,8 +25,10 @@ public class MatchSummary implements Comparable<MatchSummary> {
 
     @Override
     public int compareTo(MatchSummary other) {
-        return Long.compare(this.timeMs, other.timeMs);
-    }
+    int cmp = Long.compare(this.timeMs, other.timeMs);
+    if (cmp != 0) return cmp;
+    return Integer.compare(this.matchId, other.matchId);
+}
 
     @Override
     public boolean equals(Object o) {

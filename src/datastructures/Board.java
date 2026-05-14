@@ -10,6 +10,10 @@ public class Board {
     private int size;
     private int numMines;
     private Cell[][] grid;
+
+    public int getSize() { return size; }
+
+    public Cell getCell(int row, int col) { return grid[row][col]; }
 	
     public Board(int size, int numMines) {
         if (size <= 0 || numMines < 0 || numMines >= size * size) {
