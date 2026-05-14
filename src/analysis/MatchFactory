@@ -1,5 +1,9 @@
 package minesweeper.analysis;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class MatchFactory {
     
     public static MatchSummary parseMatchFromCsvLine(String csvLine) {
@@ -10,7 +14,7 @@ public class MatchFactory {
         String[] parts = csvLine.split(",");
         
         if (parts.length != 5) {
-            throw new IllegalArgumentException("Invalid CSV format".);
+            throw new IllegalArgumentException("Invalid CSV format.");
         }
 
         try {
@@ -25,5 +29,17 @@ public class MatchFactory {
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Error parsing numeric data in CSV line: " + csvLine, e);
         }
+    } 
+
+    public static MatchDataset parseFile(String path) throws IOException {
+        MatchDataset dataset = new MatchDataset();
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            reader.readLine(); // preskoči header red
+            String line;
+            while ((line = reader.readLine()) != null) {
+                dataset.addMatch(parseMatchFromCsvLine(line));
+            }
+        }
+        return dataset;
     }
 }
